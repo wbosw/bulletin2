@@ -13,6 +13,16 @@
   <body>
     <nav>
       <a href="/">Bulletin Board</a>
+      <% if current_user == nil #check the cookie to see if it is nil or if there is a user - "current_user" checks the cookie to see if there is a user or not. If no user, it retruns nil %>
+        
+      
+      <a href="/users/sign_up">Sign up</a>
+      <a href="/users/sign_in">Sign in</a>
+
+      <% else %>
+      <a href="/users/sign_out">Sign out</a>
+      <a href="/users/edit">Edit profile</a>
+      <% end %>
     </nav>
 
     <hr>
