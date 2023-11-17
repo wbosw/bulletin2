@@ -10,6 +10,7 @@
 
 <div>
   <div>
+  <% if current_user != nil %>
     <h2>
       Add a new board
     </h2>
@@ -27,6 +28,9 @@
         Add board
       </button>
     </form>
+    <% else %>
+    <p> please sign in to add post </p>
+    <% end %>
   </div>
 </div>
 
@@ -39,5 +43,7 @@
         <%= a_board.name %>
       </a>
     </li>
+    Owner: <%= a_board.user.email %>
+    <hr>
   <% end %>
 </ul>
